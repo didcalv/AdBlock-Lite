@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AdBlock Lite",
+  "name": "AdBlock-Lite",
   "version": "1.0",
   "description": "Bloquea anuncios intrusivos y enlaces maliciosos, mostrando alertas para proteger la navegación del usuario.",
   "permissions": [
