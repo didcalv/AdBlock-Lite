@@ -1,29 +1,29 @@
 {
-  "manifest_version": 3,
-  "name": "AdBlock-Lite",
+  "name": "AdBlock Lite (Advanced)",
   "version": "1.0",
-  "description": "Bloquea anuncios intrusivos y enlaces maliciosos, mostrando alertas para proteger la navegación del usuario.",
+  "manifest_version": 3,
+  "description": "An advanced extension that blocks intrusive ads and malicious links.",
   "permissions": [
-    "scripting",
-    "activeTab",
-    "storage",
-    "webRequest",
-    "webRequestBlocking"
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://*/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["page-blocklist.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content_script.js"]
+      "js": ["content-script.js"]
     }
-  ],
-  "action": {
-    "default_popup": "popup.html"
-  }
+  ]
 }
-
